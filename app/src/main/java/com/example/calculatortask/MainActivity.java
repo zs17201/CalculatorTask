@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         result.setText(input);
-        // after change
     }
 
     public void DotFunction(View view) {
