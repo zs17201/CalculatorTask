@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         result.setText(input);
+        // after change
     }
 
     public void DotFunction(View view) {
@@ -103,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
 
                     firstOperand = Double.parseDouble(input);
                     firstOperand *= -1;
-                    input = Double.toString(firstOperand);
-                    result.setText(CheckNum(firstOperand));
+                    input = CheckNum(firstOperand);
+                    result.setText(input);
                 } else {
                     if (result.getText().equals("+") || result.getText().equals("-") || result.getText().equals("*") || result.getText().equals("/")) {
 
@@ -114,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         secondOperand = Double.parseDouble(input);
                         secondOperand *= -1;
-                        input = Double.toString(secondOperand);
-                        result.setText(CheckNum(secondOperand));
+                        input = CheckNum(secondOperand);
+                        result.setText(input);
                     }
                 }
             }
