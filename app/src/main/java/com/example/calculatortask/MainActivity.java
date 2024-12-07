@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -158,10 +161,11 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             if(flag == 0) {
-                String res_s = CheckNum(res);
+                BigDecimal roundedRes = new BigDecimal(res).setScale(10, RoundingMode.HALF_UP);
+                String res_s = CheckNum(roundedRes.doubleValue());
                 result.setText(res_s);
-                input = res_s;//Double.toString(res);
-                firstOperand = res;
+                input = res_s;
+                firstOperand = roundedRes.doubleValue();
                 secondOperand = 0;
                 currentOperator = "";
             }
